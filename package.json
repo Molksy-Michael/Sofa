@@ -1,0 +1,15 @@
+{
+  "name": "sofa-portal",
+  "version": "0.0.1",
+  "author": "Molsky Michael",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Molksy-Michael/Sofa.git"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "express": "^4.14.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
+  }
+}
