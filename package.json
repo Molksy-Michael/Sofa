@@ -7,9 +7,12 @@
     "url": "https://github.com/Molksy-Michael/Sofa.git"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
     "express": "^4.14.0",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   }
 }
