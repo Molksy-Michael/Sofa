@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var gutil = require("gulp-util");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config.js");
+var webpackServerConfig = require("./webpack.server.config.js");
 
 gulp.task("build-dev", ["webpack:build-dev"], function() {
     gulp.watch(["src/**/*"], ["webpack:build-dev"]);
