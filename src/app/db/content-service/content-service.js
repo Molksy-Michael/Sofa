@@ -1,10 +1,10 @@
 'use strict'
 
-var props = require('./../../../server.json');
+import mongoose from 'mongoose'
+import Content from './../model/content'
+import Promise from 'bluebird'
 
-var mongoose = require('mongoose');
-var Content = require('./../model/content');
-var Promise = require('bluebird');
+import props from'./../../../server.json'
 
 mongoose.Promise = require('bluebird');
 mongoose.createConnection(props.db.storage);

@@ -1,21 +1,22 @@
 import express from 'express'
-import hapi from 'hapi'
 import path from 'path'
 import compression from 'compression'
 import React from 'react'
 import {renderToString} from 'react-dom/server'
 import {match, RouterContext} from 'react-router'
 
-import contentServiceRoute from './app/db/content-service/routes'
+import contentService from './app/db/content-service/content-service'
+import defaultDataService from './app/db/test-data-service/test-data-service'
 import routes from './app/routes'
 
-var server = express()
+var server = express(),
+    router = express.Router();
 
 server.use(compression())
 
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.route('/')
+
 
 const renderPage = (appHtml, title) => {
   return `
@@ -49,6 +50,19 @@ server.get('/', (req, res) => {
       res.status(404).send('Not Found')
     }
   })
+});
+
+server.get('/getAllContent', (req, res) => {
+  contentService.getAll()
+      .then((response) => {
+        res.send(response);
+      });
+});
+
+server.get('/createTestData', (req, res) => {
+  defaultDataService();
+  res.statusCode = 200;
+  res.send('OK');
 });
 
 server.listen(8090);
