@@ -1,9 +1,12 @@
 import express from 'express'
+import hapi from 'hapi'
 import path from 'path'
 import compression from 'compression'
 import React from 'react'
 import {renderToString} from 'react-dom/server'
 import {match, RouterContext} from 'react-router'
+
+import contentServiceRoute from './app/db/content-service/routes'
 import routes from './app/routes'
 
 var server = express()
@@ -11,6 +14,8 @@ var server = express()
 server.use(compression())
 
 server.use(express.static(path.join(__dirname, 'public')))
+
+server.route('/')
 
 const renderPage = (appHtml, title) => {
   return `

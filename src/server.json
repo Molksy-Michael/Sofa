@@ -1,0 +1,5 @@
+{
+  "db":{
+    "storage": "mongodb://localhost/snailStorage"
+  }
+}
